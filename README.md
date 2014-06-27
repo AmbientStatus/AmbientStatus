@@ -19,7 +19,7 @@ AmbientStatus provides delegates and properties for all of the features in the d
 - **[Location Monitor](https://github.com/AmbientStatus/ASLocationMonitor) `ASLocationMonitor`** (Untested)
   - Detects if the user has entered within a `kMaximumRadius` of a location (`CLLocation`), and provides feedback upon leaving the area.
 
-**AmbientStatus was planned to have a single header file - AmbientStatus.h - that was going to [conditionally include headers](Pod/Classes/AmbientStatus.h) based on [subspecs installed](AmbientStatus.podspec#L33).  This is not working.  See [issue #1](https://github.com/AmbientStatus/AmbientStatus) if you have any thoughts, please!**
+**AmbientStatus was planned to have a single header file - AmbientStatus.h - that was going to [conditionally include headers](Pod/Classes/AmbientStatus.h) based on [subspecs installed](AmbientStatus.podspec#L32).  This is not working.  See [issue #1](https://github.com/AmbientStatus/AmbientStatus/issues/1) if you have any thoughts, please!**
 
 ## Installation with CocoaPods
 
