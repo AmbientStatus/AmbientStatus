@@ -1,13 +1,15 @@
 //
-//  ASViewController.h
-//  AmbientStatus
-//
-//  Created by rexfinn on 06/26/2014.
-//  Copyright (c) 2014 rexfinn. All rights reserved.
+// ASViewController.h
+// AmbientStatus
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ASViewController : UIViewController
+#import "NSString+Convenience.h"
+
+#import "ASBatteryViewController.h"
+#import "ASTransitViewController.h"
+
+@interface ASViewController : UITableViewController
 
 @end

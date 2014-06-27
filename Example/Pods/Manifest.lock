@@ -1,0 +1,30 @@
+PODS:
+  - AmbientStatus (0.1.0):
+    - AmbientStatus/BatteryMonitor
+    - AmbientStatus/LocationMonitor
+    - AmbientStatus/TransitMonitor
+  - AmbientStatus/BatteryMonitor (0.1.0):
+    - ASBatteryMonitor
+  - AmbientStatus/LocationMonitor (0.1.0):
+    - ASLocationMonitor
+  - AmbientStatus/TransitMonitor (0.1.0):
+    - ASTransitMonitor
+  - ASBatteryMonitor (0.1.0)
+  - ASLocationMonitor (0.1.0)
+  - ASTransitMonitor (0.1.0):
+    - ASLocationMonitor
+
+DEPENDENCIES:
+  - AmbientStatus (from `../`)
+
+EXTERNAL SOURCES:
+  AmbientStatus:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AmbientStatus: 24cc2654c4cb2133ad77e4b5311fb34116b7929c
+  ASBatteryMonitor: 4168b7762651fcd22591e44faa18b16d64ae7ae1
+  ASLocationMonitor: a680ee491d2f3394c59f4c7b3f5efa25efa492d2
+  ASTransitMonitor: 64aec641529ec14be1bdb8df6c1032634d4b52bd
+
+COCOAPODS: 0.33.1

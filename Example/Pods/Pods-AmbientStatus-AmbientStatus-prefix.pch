@@ -1,0 +1,8 @@
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#endif
+
+#import "Pods-AmbientStatus-environment.h"
+#define AS_BATTERYMONITOR_EXISTS 1
+#define AS_LOCATIONMONITOR_EXISTS 1
+#define AS_TRANSITMONITOR_EXISTS 1

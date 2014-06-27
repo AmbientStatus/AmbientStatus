@@ -28,8 +28,6 @@ Pod::Spec.new do |spec|
                  monitor_name = monitor_spec[:pod_name].sub! 'AS', ''
 
                  # Each subspec adds a compiler flag saying that the spec was included
-                 # This should be used to manage a header for every ASClass, but for
-                 # some reason, that's not working, so open an issue if you can help!
                  ss.prefix_header_contents = '#define AS_' + monitor_name.upcase + '_EXISTS 1'
              end
         end

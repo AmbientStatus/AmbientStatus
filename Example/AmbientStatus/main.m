@@ -2,8 +2,8 @@
 //  main.m
 //  AmbientStatus
 //
-//  Created by rexfinn on 06/26/2014.
-//  Copyright (c) 2014 rexfinn. All rights reserved.
+//  Created by Rudd Fawcett on 06/26/2014.
+//  Copyright (c) 2014 Rudd Fawcett. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
