@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
       spec.homepage     = 'https://github.com/AmbientStatus/AmbientStatus'
       spec.author       = { 'Rudd Fawcett' => 'rudd.fawcett@gmail.com' }
       spec.source       = { :git => 'https://github.com/AmbientStatus/AmbientStatus.git', :tag => spec.version.to_s }
-     #spec.source_files = 'Pod/Classes/'
+      spec.source_files = 'Pod/Classes/'
       spec.platform     = :ios, '7.0'
       spec.requires_arc = true
 
