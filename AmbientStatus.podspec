@@ -6,30 +6,27 @@ Pod::Spec.new do |spec|
       spec.homepage     = 'https://github.com/AmbientStatus/AmbientStatus'
       spec.author       = { 'Rudd Fawcett' => 'rudd.fawcett@gmail.com' }
       spec.source       = { :git => 'https://github.com/AmbientStatus/AmbientStatus.git', :tag => spec.version.to_s }
-      spec.source_files = 'Pod/Classes/'
+      spec.source_files = 'Pod/Classes/AmbientStatus.h'
       spec.platform     = :ios, '7.0'
       spec.requires_arc = true
 
-      transit           = { :pod_name => 'ASTransitMonitor' }
-      location          = { :pod_name => 'ASLocationMonitor' }
-      battery           = { :pod_name => 'ASBatteryMonitor' }
+      spec.subspec 'Core' do |ss|
+        ss.source_files = 'Pod/Classes/AmbientStatus.h'
+      end
 
-      $all_monitors     = [transit, location, battery]
+      spec.subspec 'ASTransitMonitor' do |ss|
+        ss.dependency 'AmbientStatus/Core'
+        ss.dependency 'AmbientStatus/ASLocationMonitor'
+        ss.dependency 'ASTransitMonitor'
+      end
 
-      # make specs for each monitor
-      $all_monitors.each do |monitor_spec|
-            spec.subspec monitor_spec[:pod_name] do |ss|
-                 # If there's a podspec dependency include it
-                 Array(monitor_spec[:pod_name]).each do |dep|
-                     ss.dependency dep
-                 end
+      spec.subspec 'ASLocationMonitor' do |ss|
+        ss.dependency 'AmbientStatus/Core'
+        ss.dependency 'ASLocationMonitor'
+      end
 
-                 monitor_name = monitor_spec[:pod_name].sub! 'AS', ''
-
-                 # Each subspec adds a compiler flag saying that the spec was included
-                 # This should be used to manage a header for every ASClass, but for
-                 # some reason, that's not working, so open an issue if you can help!
-                 ss.prefix_header_contents = '#define AS_' + monitor_name.upcase + '_EXISTS 1'
-             end
-        end
+      spec.subspec 'ASBatteryMonitor' do |ss|
+        ss.dependency 'AmbientStatus/Core'
+        ss.dependency 'ASBatteryMonitor'
+      end
 end
