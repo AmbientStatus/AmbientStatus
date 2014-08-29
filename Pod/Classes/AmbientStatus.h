@@ -30,13 +30,13 @@
 
 #pragma mark - AmbientStatus Classes
 
-#if AS_BATTERYMONITOR_EXISTS
-    #import <ASBatteryMonitor/ASBatteryMonitor.h>
+#if __has_include(<ASBatteryMonitor/ASBatteryMonitor.h>)
+#import <ASBatteryMonitor/ASBatteryMonitor.h>
 #endif
 
-#if (AS_TRANSITMONITOR_EXISTS && AS_LOCATIONMONITOR_EXISTS) || AS_TRANSITMONITOR_EXISTS
-    #import <ASTransitMonitor/ASTransitMonitor.h>
-    #import <ASLocationMonitor/ASLocationMonitor.h>
-#elif AS_LOCATIONMONITOR_EXISTS && !AS_TRANSITMONITOR_EXISTS
-    #import <ASLocationMonitor/ASLocationMonitor.h>
+#if (__has_include(<ASTransitMonitor/ASTransitMonitor.h>) && __has_include(<ASLocationMonitor/ASLocationMonitor.h>)) || __has_include(<ASTransitMonitor/ASTransitMonitor.h>)
+#import <ASTransitMonitor/ASTransitMonitor.h>
+#import <ASLocationMonitor/ASLocationMonitor.h>
+#elif __has_include(<ASLocationMonitor/ASLocationMonitor.h>) && !__has_include(<ASTransitMonitor/ASTransitMonitor.h>)
+#import <ASLocationMonitor/ASLocationMonitor.h>
 #endif
